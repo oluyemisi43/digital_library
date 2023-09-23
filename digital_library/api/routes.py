@@ -78,5 +78,5 @@ def delete_book(current_user_token, id):
     book = Book.query.get(id)
     db.session.delete(book)
     db.session.commit()
-    response = Book_schema.dump(book)
+    response = book_schema.dump(book)
     return jsonify(response)   
